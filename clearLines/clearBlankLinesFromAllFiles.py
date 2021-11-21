@@ -8,8 +8,9 @@ for filename in os.listdir(os.getcwd()):
   print(inpath)
   if os.path.isfile(inpath):
     with open(inpath, 'r') as infile:
+      outfile.write(f'{filename}\n')
       for line in infile:
         if line.rstrip():
           outfile.write(line)
-      outfile.write("----------------------------------\n")
-      outfile.write("----------------------------------\n")
+      outfile.write("-"*32 + "\n")
+      outfile.write("-"*32 + "\n")
