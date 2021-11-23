@@ -2,6 +2,9 @@
 import os
 outpath = os.path.join(os.getcwd(), "out/combine.txt")
 print(outpath)
+outdir = os.path.dirname(outpath)
+if not os.path.exists(outdir):
+  os.makedirs(outdir)
 outfile = open(outpath, 'a')
 for filename in os.listdir(os.getcwd()):
   inpath = os.path.join(os.getcwd(), filename)
@@ -14,3 +17,4 @@ for filename in os.listdir(os.getcwd()):
           outfile.write(line)
       outfile.write("-"*32 + "\n")
       outfile.write("-"*32 + "\n")
+
